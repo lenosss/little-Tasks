@@ -1,0 +1,124 @@
+/* Setting the font family and background color for the body */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #0b0d12;
+}
+
+/* Styling the main container */
+.container {
+  position: relative;
+  display: flex;
+  background-color: #1f2633;
+  width: clamp(300px, 50%, 900px); /* Using clamp to set a responsive width */
+  justify-content: space-around;
+  margin: auto;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+/* Styling the task form */
+.taskForm {
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  margin-left: 40%; /* Adjusting the margin for center alignment */
+  border-radius: 3%;
+  background-color: #0b0d12;
+  width: 60%; /* Setting the width of the task form */
+}
+
+/* Styling the input field for adding tasks */
+.taskInput {
+  margin-bottom: 15px;
+  height: 30px;
+  border: none;
+  width: 96%; /* Making the input field width responsive */
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+/* Removing the default focus outline */
+.taskInput:focus {
+  outline: none;
+}
+
+/* Removing the default focus outline for buttons */
+.taskButton:focus {
+  outline: none;
+}
+
+/* Styling the title */
+.title {
+  position: absolute;
+  top: 30px;
+  left: 5%;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+/* Styling the add task button */
+.taskButton {
+  color: whitesmoke;
+  width: 100%;
+  border: 1px solid #ff0808;
+  background-color: #fb1919;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.taskButton:hover {
+  color: #fb1919;
+  background-color: whitesmoke;
+}
+
+/* Styling the task container */
+.task {
+  display: flex;
+  background-color: #1f2633;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Styling the remove button for each task */
+.remove_button {
+  border: 1px solid #ff0808;
+  background-color: #fb1919;
+  color: whitesmoke;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.remove_button:hover {
+  color: #fb1919;
+  background-color: whitesmoke;
+}
+
+/* Styling the task description */
+.task_description {
+  color: whitesmoke;
+  word-break: break-all;
+  white-space: normal;
+  padding-left: 10px;
+}
+
+/* Applying a line-through style for completed tasks */
+.crossed {
+  text-decoration: line-through;
+}
+
+/* Applying opacity for completed tasks */
+.done-task {
+  opacity: 0.5;
+}

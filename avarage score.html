@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Test Scores Application</title>
+    <style>
+      body {
+        background-color: darkblue;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 50px;
+      }
+      #testScores {
+        margin-top: 20px;
+      }
+      input[type="number"] {
+        width: 50px;
+      }
+      canvas {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Test Scores Application</h1>
+    <form id="scoreForm">
+      <label for="score1">Enter Score 1:</label>
+      <input type="number" id="score1" /><br />
+
+      <label for="score2">Enter Score 2:</label>
+      <input type="number" id="score2" /><br />
+
+      <label for="score3">Enter Score 3:</label>
+      <input type="number" id="score3" /><br />
+
+      <button type="button" onclick="calculateScores()">Calculate</button>
+    </form>
+
+    <div id="testScores"></div>
+
+    <canvas id="scoreChart" width="400" height="200"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      function calculateScores() {
+        let score1 = parseFloat(document.getElementById("score1").value);
+        let score2 = parseFloat(document.getElementById("score2").value);
+        let score3 = parseFloat(document.getElementById("score3").value);
+
+        let total = score1 + score2 + score3;
+        let average = total / 3;
+
+        document.getElementById("testScores").innerHTML = `<h2>Test Scores</h2>
+            <p>The first score was ${score1}</p>
+            <p>The second score was ${score2}</p>
+            <p>The third score was ${score3}</p>
+            <p>The average of the three scores is ${average.toFixed(2)}</p>`;
+
+        // Create a bar chart
+        let ctx = document.getElementById("scoreChart").getContext("2d");
+        let myChart = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: ["Score 1", "Score 2", "Score 3"],
+            datasets: [
+              {
+                label: "Scores",
+                data: [score1, score2, score3],
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.5)",
+                  "rgba(54, 162, 235, 0.5)",
+                  "rgba(255, 206, 86, 0.5)",
+                ],
+                borderColor: [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Test Scores Application</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #25274d;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.container {
+    text-align: center;
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+    </style>
+  </head>
+  <body>
+    <body>
+        <div class="header">
+            <h1>The Test Scores Application</h1>
+        </div>
+    
+        <div class="container">
+            <div class="input-container">
+                <label for="score1">Enter Score 1:</label>
+                <input type="number" id="score1" />
+            </div>
+    
+            <div class="input-container">
+                <label for="score2">Enter Score 2:</label>
+                <input type="number" id="score2" />
+            </div>
+    
+            <div class="input-container">
+                <label for="score3">Enter Score 3:</label>
+                <input type="number" id="score3" />
+            </div>
+
+            <div class="input-container">
+                <label for="score4">Enter Score 4:</label>
+                <input type="number" id="score4" />
+            </div>
+    
+            <div class="input-container">
+                <label for="score5">Enter Score 5:</label>
+                <input type="number" id="score5" />
+            </div>
+    
+            <button onclick="calculate()">Calculate</button>
+        </div>
+    
+        <div id="result"></div>
+    
+
+    <script>
+function calculate() {
+    // Global variables to store scores
+    let score1 = parseFloat(document.getElementById("score1").value);
+    let score2 = parseFloat(document.getElementById("score2").value);
+    let score3 = parseFloat(document.getElementById("score3").value);
+    let score4 = parseFloat(document.getElementById("score4").value);
+    let score5 = parseFloat(document.getElementById("score5").value);
+
+    // Calculate total and average
+    let total = score1 + score2 + score3 + score4 + score5;
+    let average = total / 5;
+
+    // Display the test scores and average
+    let resultElement = document.getElementById("result");
+    resultElement.innerHTML = `
+
+        <p>The average of the three scores is ${average.toFixed(2)}</p>`;
+}
+
+    </script>
+  </body>
+</html>

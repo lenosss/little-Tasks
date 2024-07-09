@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Online Shop Payment</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-content">
+        <p class="text">GeeksforGeeks</p>
+      </div>
+
+      <div class="centre-content">
+        <h1 class="price">$2499<span>/-</span></h1>
+        <p class="course">Buy DSA Self-Paced Course Now!</p>
+      </div>
+
+      <div class="payment-options">
+        <button type="button" class="pay-now-btn">Apply Coupons</button>
+        <button type="button" class="pay-now-btn">Pay with Netbanking</button>
+        <button type="button" class="pay-now-btn">Pay with PayPal</button>
+      </div>
+
+      <div class="card-details">
+        <p>Pay using Credit or Debit card</p>
+
+        <div class="card-inputs">
+          <div class="card-number">
+            <label for="card-number">Card Number</label>
+            <input
+              type="text"
+              id="card-number"
+              class="card-number-field"
+              placeholder="#### #### #### ####"
+            />
+          </div>
+
+          <div class="exp-cvv">
+            <div class="expiry">
+              <label for="expiry">Expiry Date</label>
+              <input
+                type="text"
+                id="expiry"
+                class="expiry-field"
+                placeholder="MM/YY"
+              />
+            </div>
+            <div class="cvv">
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" class="cvv-field" placeholder="xxx" />
+            </div>
+          </div>
+
+          <div class="card-holder">
+            <label for="card-holder">Card Holder Name</label>
+            <input
+              type="text"
+              id="card-holder"
+              class="card-name-field"
+              placeholder="Enter your Name"
+            />
+          </div>
+        </div>
+
+        <button type="submit" class="submit-now-btn">Submit</button>
+      </div>
+    </div>
+  </body>
+</html>
